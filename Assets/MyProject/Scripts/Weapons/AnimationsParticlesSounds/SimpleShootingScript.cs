@@ -10,7 +10,7 @@ public class SimpleShootingScript : MonoBehaviour
 	[SerializeField] private ParticleSystem[] _velocityShootParticles;
 	[SerializeField] private ParticleSystem[] _otherParticles;
 	[SerializeField] private Light _shootLight;
-	[FormerlySerializedAs("_hootFX")] [SerializeField] private GameObject _shootFX;
+	[SerializeField] private GameObject _shootFX;
 	[SerializeField] private Transform _shootSound;
 
 	private bool _shootOn;
