@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 98194986}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 110.12061, y: 33.520756, z: 82.67273}
+  m_LocalPosition: {x: 44.4979, y: 21.973883, z: 60.502968}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -282,6 +282,7 @@ MonoBehaviour:
   _target: {fileID: 60807572}
   _shiftPosition: {x: 0, y: 0, z: 0}
   _player: {fileID: 775076151}
+  _camera: {fileID: 591872984}
   _noScopePosition: {fileID: 902627955}
   _scopePosition: {fileID: 1336395265}
   _recoveryRate: 0.1
@@ -291,6 +292,7 @@ MonoBehaviour:
   _recoilZ: 0.1
   _snappiness: 6
   _returnSpeed: 2
+  _fatherCamera: {fileID: 98194987}
 --- !u!1001 &100075047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &253803173
 Transform:
   m_ObjectHideFlags: 0
