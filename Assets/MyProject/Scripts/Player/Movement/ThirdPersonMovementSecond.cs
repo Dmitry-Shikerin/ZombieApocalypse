@@ -81,6 +81,7 @@ namespace MyProject.Scripts.Player.Movement
 
         private void Rotate()
         {
+            //не поворачивает игрока если стоим на месте
             if (Idle)
                 return;
 
@@ -105,10 +106,6 @@ namespace MyProject.Scripts.Player.Movement
 
         private void PlayAnimation()
         {
-            //�������� �������� � ���������
-            // _animator.SetBool("GunsScope", false);
-            // _animator.SetBool("GunsNoScope", true);
-
             float maxMovementValue = Mathf.Max(Mathf.Abs(_horizontalInput), Mathf.Abs(_verticalInput));
             float speedInput = _runInput * maxMovementValue + maxMovementValue;
 
@@ -143,11 +140,6 @@ namespace MyProject.Scripts.Player.Movement
 
         private void ScopeRotate()
         {
-            //не поворачивает игрока если стоим на месте
-            // if (Idle)
-            //     // transform.rotation = _camera.rotation;
-            //     return;
-        
             Vector3 target = TargetRotateScope;
             target.y = 0;
         

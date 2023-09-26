@@ -8,6 +8,6 @@ public class M16 : Weapon
 {
     public override void Shoot()
     {
-        _raycastAttack.PerformAttack();
+            _raycastAttack.PerformAttack();
     }
 }

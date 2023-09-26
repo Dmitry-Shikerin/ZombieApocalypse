@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibleCursor: 1
   _movementSpeed: 1.5
-  _runSpeed: 5
+  _runSpeed: 3
   _angularSpeed: 500
-  _gravity: 1.7
-  _jumpForce: 5
+  _gravity: 1
+  _jumpForce: 8
