@@ -171,9 +171,6 @@ namespace MyProject.Scripts.Player.Movement
 
         private void ScopePlayAnimation()
         {
-            // _animator.SetBool("GunsNoScope", false);
-            _animator.SetBool("GunsScope", true);
-            
             float horizontalInput = _runInput * _horizontalInput + _horizontalInput;
             float verticalInput = _runInput * _verticalInput + _verticalInput;
         

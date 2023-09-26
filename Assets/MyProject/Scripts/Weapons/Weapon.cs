@@ -6,22 +6,27 @@ namespace MyProject.Scripts.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
-        [SerializeField] protected string _label;
+        [Header("View")] [SerializeField] protected string _label;
         [SerializeField] protected Sprite _icon;
-        [SerializeField] protected bool _isActive;
-        [SerializeField] protected float _shootForce;
+
+        [Header("IsActive")] [SerializeField] protected bool _isActive;
+
+        [Header("Characteristics")] [SerializeField]
+        protected float _shootForce;
+
         [SerializeField] protected float _fireRate;
         [SerializeField] protected float _speed;
         [SerializeField] protected float _spred;
-        [SerializeField] protected Transform _shootPoint;
+
+        [Header("Positions")] [SerializeField] protected Transform _shootPoint;
         [SerializeField] protected Camera _camera;
-        [SerializeField] protected Bullet _bullet;
-        
-        
+
+        [Header("RaycastAttack")] [SerializeField]
+        protected RaycastAttack _raycastAttack;
 
         private float _nextShoot = 0;
         private Vector3 _spawnPoint;
-        
+
         public string Label => _label;
         public Sprite Icon => _icon;
         public bool IsActive => gameObject.activeSelf == true;
@@ -36,9 +41,9 @@ namespace MyProject.Scripts.Weapons
             if (Input.GetButton("Fire1") && Time.time > _nextShoot)
             {
                 _nextShoot = Time.time + 1f / _fireRate;
-
                 Shoot();
             }
+            // if (Input.GetButton("Fire1"))
         }
 
         public abstract void Shoot();
