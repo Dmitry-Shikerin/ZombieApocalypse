@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Invector
+namespace DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.Generic.Utils
 {
     public static class vExtensions
     {
@@ -47,7 +47,7 @@ namespace Invector
             return Mathf.Clamp(angle, min, max);
         }
 
-        public static ClipPlanePoints NearClipPlanePoints(this Camera camera, Vector3 pos, float clipPlaneMargin)
+        public static ClipPlanePoints NearClipPlanePoints(this UnityEngine.Camera camera, Vector3 pos, float clipPlaneMargin)
         {
             var clipPlanePoints = new ClipPlanePoints();
 

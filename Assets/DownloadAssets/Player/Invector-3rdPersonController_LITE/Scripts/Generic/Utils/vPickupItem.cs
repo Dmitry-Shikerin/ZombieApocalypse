@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class vPickupItem : MonoBehaviour
+namespace DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.Generic.Utils
 {
-    AudioSource _audioSource;
-    public AudioClip _audioClip;
-    public GameObject _particle;    
-
-    void Start()
+    public class vPickupItem : MonoBehaviour
     {
-        _audioSource = GetComponent<AudioSource>();
-    }
+        AudioSource _audioSource;
+        public AudioClip _audioClip;
+        public GameObject _particle;    
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
+        void Start()
         {
-            Renderer[] renderers = GetComponentsInChildren<Renderer>();
-            foreach (Renderer r in renderers)            
-                r.enabled = false;            
+            _audioSource = GetComponent<AudioSource>();
+        }
 
-            _audioSource.PlayOneShot(_audioClip);
-            Destroy(gameObject, _audioClip.length);
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.CompareTag("Player"))
+            {
+                Renderer[] renderers = GetComponentsInChildren<Renderer>();
+                foreach (Renderer r in renderers)            
+                    r.enabled = false;            
+
+                _audioSource.PlayOneShot(_audioClip);
+                Destroy(gameObject, _audioClip.length);
+            }
         }
     }
 }

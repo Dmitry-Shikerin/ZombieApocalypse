@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Invector.Utils
+namespace DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.Generic.Utils
 {
     public class vComment : MonoBehaviour
     {

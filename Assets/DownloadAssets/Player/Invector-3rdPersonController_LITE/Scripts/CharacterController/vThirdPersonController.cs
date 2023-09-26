@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Invector.vCharacterController
+namespace DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.CharacterController
 {
     public class vThirdPersonController : vThirdPersonAnimator
     {

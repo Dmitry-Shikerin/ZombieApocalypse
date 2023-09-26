@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SlimUI.ModernMenu{
+namespace DownloadAssets.UI.SlimUI.Modern_Menu_1.Scripts.ThemeEditor{
 	[ExecuteInEditMode()]
 	[System.Serializable]
 	public class ThemedUI : MonoBehaviour {

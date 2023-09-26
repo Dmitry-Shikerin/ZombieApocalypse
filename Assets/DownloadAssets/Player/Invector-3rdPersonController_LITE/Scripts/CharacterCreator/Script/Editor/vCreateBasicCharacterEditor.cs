@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.Camera;
+using DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.CharacterController;
+using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;

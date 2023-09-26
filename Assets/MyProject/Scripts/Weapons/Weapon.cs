@@ -1,65 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using MyProject.Scripts.Bullets;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Weapon : MonoBehaviour
+namespace MyProject.Scripts.Weapons
 {
-    [SerializeField] private float _shootForce;
-    [SerializeField] private float _fireRate;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _spred;
-    [SerializeField] private Transform _spownPointBullet;
-    [SerializeField] private Camera _camera;
-    [SerializeField] private Bullet _bullet;
-
-    private float _nextShoot = 0;
-    private Vector3 _spownPoint;
-
-    private void Start()
+    public abstract class Weapon : MonoBehaviour
     {
-        _spownPoint = _spownPointBullet.transform.position;
-    }
+        [SerializeField] protected string _label;
+        [SerializeField] protected Sprite _icon;
+        [SerializeField] protected bool _isActive;
+        [SerializeField] protected float _shootForce;
+        [SerializeField] protected float _fireRate;
+        [SerializeField] protected float _speed;
+        [SerializeField] protected float _spred;
+        [SerializeField] protected Transform _shootPoint;
+        [SerializeField] protected Camera _camera;
+        [SerializeField] protected Bullet _bullet;
+        
+        
 
-    private void Update()
-    {
-        if (Input.GetButton("Fire1") && Time.time > _nextShoot)
+        private float _nextShoot = 0;
+        private Vector3 _spawnPoint;
+        
+        public string Label => _label;
+        public Sprite Icon => _icon;
+        public bool IsActive => gameObject.activeSelf == true;
+
+        private void Start()
         {
-            _nextShoot = Time.time + 1f / _fireRate;
-
-            Shoot();
-        }
-    }
-
-    private void Shoot()
-    {
-        Ray ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-
-        RaycastHit hit;
-
-        Vector3 targetPoint;
-
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.GetPoint(75);
+            _spawnPoint = _shootPoint.transform.position;
         }
 
-        Vector3 dirtWithouSpread = targetPoint - _spownPointBullet.position;
+        private void Update()
+        {
+            if (Input.GetButton("Fire1") && Time.time > _nextShoot)
+            {
+                _nextShoot = Time.time + 1f / _fireRate;
 
-        float x = Random.Range(-_spred, _spred);
-        float y = Random.Range(-_spred, _spred);
+                Shoot();
+            }
+        }
 
-        Vector3 directionSpread = dirtWithouSpread + new Vector3(x, y, 0);
-
-        Bullet bullet = Instantiate(_bullet, _spownPointBullet.position, Quaternion.identity);
-
-        bullet.transform.forward = directionSpread.normalized;
-
-        bullet.GetComponent<Rigidbody>().AddForce(directionSpread.normalized * _shootForce, ForceMode.Impulse);
-        //bullet.transform.Rotate(0, -90, -90);
+        public abstract void Shoot();
     }
 }

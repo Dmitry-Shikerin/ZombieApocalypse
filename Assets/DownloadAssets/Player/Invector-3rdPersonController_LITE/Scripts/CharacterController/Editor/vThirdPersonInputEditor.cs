@@ -1,8 +1,9 @@
-﻿using UnityEditor;
+﻿using DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.CharacterController;
+using UnityEditor;
 using UnityEngine;
 
 [CanEditMultipleObjects]
-[CustomEditor(typeof(Invector.vCharacterController.vThirdPersonInput), true)]
+[CustomEditor(typeof(vThirdPersonInput), true)]
 public class vThirdPersonInputEditor : Editor
 {
     GUISkin skin;

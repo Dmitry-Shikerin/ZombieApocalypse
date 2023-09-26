@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.Camera;
+using UnityEngine;
 
-namespace Invector.vCharacterController
+namespace DownloadAssets.Player.Invector_3rdPersonController_LITE.Scripts.CharacterController
 {
     public class vThirdPersonInput : MonoBehaviour
     {
@@ -19,7 +20,7 @@ namespace Invector.vCharacterController
 
         [HideInInspector] public vThirdPersonController cc;
         [HideInInspector] public vThirdPersonCamera tpCamera;
-        [HideInInspector] public Camera cameraMain;
+        [HideInInspector] public UnityEngine.Camera cameraMain;
 
         #endregion
 
@@ -91,10 +92,10 @@ namespace Invector.vCharacterController
         {
             if (!cameraMain)
             {
-                if (!Camera.main) Debug.Log("Missing a Camera with the tag MainCamera, please add one.");
+                if (!UnityEngine.Camera.main) Debug.Log("Missing a Camera with the tag MainCamera, please add one.");
                 else
                 {
-                    cameraMain = Camera.main;
+                    cameraMain = UnityEngine.Camera.main;
                     cc.rotateTarget = cameraMain.transform;
                 }
             }

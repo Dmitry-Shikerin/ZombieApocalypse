@@ -1,64 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Rigidbody))]
-public class PlayerInput : MonoBehaviour
+namespace MyProject.OldScripts.Scripts.Player.PlayerMovement
 {
-    [SerializeField] private float _speed;
-
-    private Rigidbody _rigidbody;
-
-    private Vector3 _moveDirection;
-    private Quaternion _rotation;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody))]
+    public class PlayerInput : MonoBehaviour
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        [SerializeField] private float _speed;
 
-        _rotation = _rigidbody.rotation;
-    }
+        private Rigidbody _rigidbody;
 
-    void Start()
-    {
+        private Vector3 _moveDirection;
+        private Quaternion _rotation;
 
-    }
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
 
-    void Update()
-    {
-        PlayerMover();
-    }
+            _rotation = _rigidbody.rotation;
+        }
 
-    private void PlayerMover()
-    {
-        _moveDirection.z = Input.GetAxis("Horizontal");
-        _moveDirection.x = Input.GetAxis("Vertical");
+        void Start()
+        {
 
-        _moveDirection.y = 0;
-        _moveDirection.x = Mathf.Clamp(_moveDirection.x, -1f, 1f);
-        _moveDirection.z = Mathf.Clamp(_moveDirection.z, -1f, 1f);
+        }
 
-        _rotation.x = 0;
-        _rotation.y = 0;
-        _rotation.z = 0;
+        void Update()
+        {
+            PlayerMover();
+        }
 
-        Vector3 directionVector = new Vector3(_moveDirection.x, 0, -_moveDirection.z);
+        private void PlayerMover()
+        {
+            _moveDirection.z = Input.GetAxis("Horizontal");
+            _moveDirection.x = Input.GetAxis("Vertical");
 
-        _rigidbody.MovePosition(_rigidbody.position + directionVector * Time.deltaTime * _speed);
+            _moveDirection.y = 0;
+            _moveDirection.x = Mathf.Clamp(_moveDirection.x, -1f, 1f);
+            _moveDirection.z = Mathf.Clamp(_moveDirection.z, -1f, 1f);
 
-        RotateToDirection(directionVector, 10f);
-    }
+            _rotation.x = 0;
+            _rotation.y = 0;
+            _rotation.z = 0;
 
-    public void RotateToDirection(Vector3 direction, float rotationSpeed)
-    {
-        direction.y = 0f;
+            Vector3 directionVector = new Vector3(_moveDirection.x, 0, -_moveDirection.z);
 
-        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, 
-            direction.normalized, rotationSpeed * Time.deltaTime, .1f);
+            _rigidbody.MovePosition(_rigidbody.position + directionVector * Time.deltaTime * _speed);
 
-        Quaternion newRotation = Quaternion.LookRotation(desiredForward);
+            RotateToDirection(directionVector, 10f);
+        }
 
-        transform.rotation = newRotation;
+        public void RotateToDirection(Vector3 direction, float rotationSpeed)
+        {
+            direction.y = 0f;
+
+            Vector3 desiredForward = Vector3.RotateTowards(transform.forward, 
+                direction.normalized, rotationSpeed * Time.deltaTime, .1f);
+
+            Quaternion newRotation = Quaternion.LookRotation(desiredForward);
+
+            transform.rotation = newRotation;
+        }
     }
 }

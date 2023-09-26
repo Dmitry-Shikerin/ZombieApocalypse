@@ -1,79 +1,77 @@
-using Invector;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using static Invector.vCharacterController.vThirdPersonMotor;
 
-[RequireComponent(typeof(Camera))]
-public class PlayerCamera : MonoBehaviour
+namespace MyProject.OldScripts.Scripts.Player.PlayerCamera
 {
-    [SerializeField] private Transform _targetPlayer;
-
-    private Transform _targetLookAt;
-    private Vector3 _currentTargetPosition;
-    private Vector3 _offSet;
-
-    private float _defaultDistans;
-    private float _defaultHeight;
-    private float _mouseY;
-    private float _mouseX;
-    private float _smoothFollow;
-    public float _xMouseSensitivity;
-    public float _yMouseSensitivity;
-
-    private Camera _camera;
-
-    private void Awake()
+    [RequireComponent(typeof(Camera))]
+    public class PlayerCamera : MonoBehaviour
     {
-        _camera = GetComponent<Camera>();
+        [SerializeField] private Transform _targetPlayer;
 
-        _defaultDistans = 2.5f;
-        _defaultHeight = 2.5f;
-        _mouseX = 0f;
-        _mouseX = 0f;
-        _smoothFollow = 10f;
-        _xMouseSensitivity = 3f;
-        _yMouseSensitivity = 3f;
-        _offSet = new Vector3(-_defaultDistans, -_defaultDistans, -_defaultDistans);
-    }
+        private Transform _targetLookAt;
+        private Vector3 _currentTargetPosition;
+        private Vector3 _offSet;
 
-    void Start()
-    {
+        private float _defaultDistans;
+        private float _defaultHeight;
+        private float _mouseY;
+        private float _mouseX;
+        private float _smoothFollow;
+        public float _xMouseSensitivity;
+        public float _yMouseSensitivity;
 
-    }
+        private Camera _camera;
 
-    void Update()
-    {
-    }
+        private void Awake()
+        {
+            _camera = GetComponent<Camera>();
 
-    private void FixedUpdate()
-    {
-        var Y = Input.GetAxis("Mouse Y");
-        var X = Input.GetAxis("Mouse X");
+            _defaultDistans = 2.5f;
+            _defaultHeight = 2.5f;
+            _mouseX = 0f;
+            _mouseX = 0f;
+            _smoothFollow = 10f;
+            _xMouseSensitivity = 3f;
+            _yMouseSensitivity = 3f;
+            _offSet = new Vector3(-_defaultDistans, -_defaultDistans, -_defaultDistans);
+        }
 
-        Vector3 rotateDirection = new Vector3(X, Y, 0);
+        void Start()
+        {
 
-        RotateToDirection(rotateDirection, 5f);
+        }
 
-    }
+        void Update()
+        {
+        }
 
-    private Vector3 SetCameraPosition()
-    {
-        Vector3 startPosition = _targetPlayer.position - _offSet;
+        private void FixedUpdate()
+        {
+            var Y = Input.GetAxis("Mouse Y");
+            var X = Input.GetAxis("Mouse X");
 
-        return startPosition;
-    }
+            Vector3 rotateDirection = new Vector3(X, Y, 0);
 
-    public void RotateToDirection(Vector3 direction, float rotationSpeed)
-    {
-        direction.y = 0f;
+            RotateToDirection(rotateDirection, 5f);
 
-        Vector3 desiredForward = Vector3.RotateTowards(transform.forward,
-            direction.normalized, rotationSpeed * Time.deltaTime, .1f);
+        }
 
-        Quaternion newRotation = Quaternion.LookRotation(desiredForward);
+        private Vector3 SetCameraPosition()
+        {
+            Vector3 startPosition = _targetPlayer.position - _offSet;
 
-        transform.rotation = newRotation;
+            return startPosition;
+        }
+
+        public void RotateToDirection(Vector3 direction, float rotationSpeed)
+        {
+            direction.y = 0f;
+
+            Vector3 desiredForward = Vector3.RotateTowards(transform.forward,
+                direction.normalized, rotationSpeed * Time.deltaTime, .1f);
+
+            Quaternion newRotation = Quaternion.LookRotation(desiredForward);
+
+            transform.rotation = newRotation;
+        }
     }
 }

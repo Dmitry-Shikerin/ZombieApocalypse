@@ -25,15 +25,18 @@ I am here to help you and to improve my products for the best.
 using System;
 using UnityEngine;
 
-public class PublisherReadme : ScriptableObject 
+namespace MyProject.Prefabs.Terrain.TheTalesFactory.Photoscanned_MoutainsRocks_PBR._ReadMe___Publisher_Window.Inspector_Info.Scripts
 {
-	public Texture2D icon;
-	public string title;
-	public Section[] sections;
-	
-	[Serializable]
-	public class Section 
+	public class PublisherReadme : ScriptableObject 
 	{
-		public string heading, text, linkText, url;
+		public Texture2D icon;
+		public string title;
+		public Section[] sections;
+	
+		[Serializable]
+		public class Section 
+		{
+			public string heading, text, linkText, url;
+		}
 	}
 }

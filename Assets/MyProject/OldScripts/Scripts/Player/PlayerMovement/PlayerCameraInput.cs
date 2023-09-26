@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCameraInput : MonoBehaviour
+namespace MyProject.OldScripts.Scripts.Player.PlayerMovement
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerCameraInput : MonoBehaviour
     {
+        // Start is called before the first frame update
+        void Start()
+        {
         
-    }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }

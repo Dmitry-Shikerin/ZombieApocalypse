@@ -22,6 +22,7 @@ before leaving a review to the asset store.
 I am here to help you and to improve my products for the best.
 */
 
+using MyProject.Prefabs.Terrain.TheTalesFactory.Photoscanned_MoutainsRocks_PBR._ReadMe___Publisher_Window.Inspector_Info.Scripts;
 using UnityEditor;
 using UnityEngine;
 

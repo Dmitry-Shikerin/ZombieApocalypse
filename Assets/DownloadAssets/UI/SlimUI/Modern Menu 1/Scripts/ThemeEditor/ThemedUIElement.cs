@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-namespace SlimUI.ModernMenu{
+namespace DownloadAssets.UI.SlimUI.Modern_Menu_1.Scripts.ThemeEditor{
 	[System.Serializable]
 	public class ThemedUIElement : ThemedUI {
 		[Header("Parameters")]
