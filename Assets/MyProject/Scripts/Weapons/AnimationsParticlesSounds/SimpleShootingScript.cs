@@ -26,33 +26,36 @@ public class SimpleShootingScript : MonoBehaviour
 
 	void Update() 
 	{
-		if (Input.GetButton("Fire1"))
+		if (Input.GetButton("Zoom"))
 		{
-			//ShootFX.SetActive(true);
-			ShootNow();
-
-			foreach (ParticleSystem i in _velocityShootParticles)
+			if (Input.GetButton("Fire1"))
 			{
-				i.GetComponent<ParticleSystem>().enableEmission = true;
+				//ShootFX.SetActive(true);
+				ShootNow();
+
+				foreach (ParticleSystem i in _velocityShootParticles)
+				{
+					i.GetComponent<ParticleSystem>().enableEmission = true;
+				}
+
+				foreach (ParticleSystem i in _otherParticles)
+				{
+					i.GetComponent<ParticleSystem>().enableEmission = true;
+				}
 			}
-
-			foreach (ParticleSystem i in _otherParticles)
+			else
 			{
-				i.GetComponent<ParticleSystem>().enableEmission = true;
-			}
-		}
-		else 
-		{
-			//ShootFX.SetActive(false);
+				//ShootFX.SetActive(false);
 
-			foreach (ParticleSystem i in _velocityShootParticles)
-			{
-				i.GetComponent<ParticleSystem>().enableEmission = false;
-			}
+				foreach (ParticleSystem i in _velocityShootParticles)
+				{
+					i.GetComponent<ParticleSystem>().enableEmission = false;
+				}
 
-			foreach (ParticleSystem i in _otherParticles)
-			{
-				i.GetComponent<ParticleSystem>().enableEmission = false;
+				foreach (ParticleSystem i in _otherParticles)
+				{
+					i.GetComponent<ParticleSystem>().enableEmission = false;
+				}
 			}
 		}
 	}

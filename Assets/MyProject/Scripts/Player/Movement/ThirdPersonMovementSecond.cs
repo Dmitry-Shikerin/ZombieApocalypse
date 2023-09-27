@@ -49,9 +49,13 @@ namespace MyProject.Scripts.Player.Movement
                 ScopeMovement();
                 ScopeRotate();
             }
+            else
+            {
+                Movement();
+                Rotate();
+                
+            }
             
-            Movement();
-            Rotate();
         }
 
         #region NoScopeMovement
@@ -120,7 +124,7 @@ namespace MyProject.Scripts.Player.Movement
             {
                 _horizontalInput = Input.GetAxis(_horizontal);
                 _verticalInput = Input.GetAxis(_vertical);
-                _runInput = Input.GetAxis(_run);
+                // _runInput = Input.GetAxis(_run);
 
                 _direction = transform.TransformDirection(_horizontalInput, 0, _verticalInput).normalized;
             
@@ -130,7 +134,10 @@ namespace MyProject.Scripts.Player.Movement
 
             _direction.y -= _characteristics.Gravity * Time.deltaTime;
         
-            float speed = _runInput * _characteristics.RunSpeed + _characteristics.MovementSpeed;
+            // float speed = _runInput * _characteristics.RunSpeed + _characteristics.MovementSpeed;
+            
+            float speed = _characteristics.MovementSpeed;
+
             Vector3 direction = _direction * speed * Time.deltaTime;
 
             direction.y = _direction.y;
