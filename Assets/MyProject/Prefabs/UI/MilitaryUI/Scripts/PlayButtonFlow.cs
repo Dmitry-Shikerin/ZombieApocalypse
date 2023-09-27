@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace MilitaryUI.Scripts
+namespace MyProject.Prefabs.UI.MilitaryUI.Scripts
 {
     public class PlayButtonFlow : MonoBehaviour
     {

@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Serialization;
 
-public class SelfDestroy : MonoBehaviour 
+namespace MyProject.Scripts.Weapons.AnimationsParticlesSounds
 {
-	[SerializeField] private float _time = 1.0f;
-	void Start () 
+	public class SelfDestroy : MonoBehaviour 
 	{
-		Destroy(this.gameObject, _time);
+		[SerializeField] private float _time = 1.0f;
+		void Start () 
+		{
+			Destroy(this.gameObject, _time);
+		}
 	}
 }

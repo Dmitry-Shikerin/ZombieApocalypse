@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class MilitaryToggleSlider : MonoBehaviour
+namespace MyProject.Prefabs.UI.MilitaryUI.Scripts
 {
-    public void SetValue(bool value) {
-        var animator = GetComponent<Animator>();
-        animator.StopPlayback();
-        animator.Play(value ? "Enable" : "Disable");
+    [RequireComponent(typeof(Animator))]
+    public class MilitaryToggleSlider : MonoBehaviour
+    {
+        public void SetValue(bool value) {
+            var animator = GetComponent<Animator>();
+            animator.StopPlayback();
+            animator.Play(value ? "Enable" : "Disable");
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MilitaryUI.Scripts
+namespace MyProject.Prefabs.UI.MilitaryUI.Scripts
 {
     public class MenuWindows : MonoBehaviour
     {

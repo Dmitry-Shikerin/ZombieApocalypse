@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DisableOnPlay : MonoBehaviour
+namespace MyProject.Prefabs.UI.Simple_Crosshair_Generator.Scripts.Example.Utility
 {
-    void Start()
+    public class DisableOnPlay : MonoBehaviour
     {
-        gameObject.SetActive(false);
+        void Start()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

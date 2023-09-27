@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MyProject.Prefabs.UI.Simple_Crosshair_Generator.Scripts;
+using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 

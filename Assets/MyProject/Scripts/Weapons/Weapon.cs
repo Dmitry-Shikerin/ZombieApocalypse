@@ -6,23 +6,27 @@ namespace MyProject.Scripts.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
-        [Header("View")] [SerializeField] protected string _label;
+        [Header("View")] 
+        [SerializeField] protected string _label;
         [SerializeField] protected Sprite _icon;
 
-        [Header("IsActive")] [SerializeField] protected bool _isActive;
+        [Header("IsActive")] 
+        [SerializeField] protected bool _isActive;
 
-        [Header("Characteristics")] [SerializeField]
+        [Header("Characteristics")] 
+        [SerializeField]
         protected float _shootForce;
 
         [SerializeField] protected float _fireRate;
         [SerializeField] protected float _speed;
         [SerializeField] protected float _spred;
 
-        [Header("Positions")] [SerializeField] protected Transform _shootPoint;
+        [Header("Positions")] 
+        [SerializeField] protected Transform _shootPoint;
         [SerializeField] protected Camera _camera;
 
         [Header("RaycastAttack")] [SerializeField]
-        protected RaycastAttack _raycastAttack;
+        protected RaycastAttack.RaycastAttack _raycastAttack;
 
         private float _nextShoot = 0;
         private Vector3 _spawnPoint;
