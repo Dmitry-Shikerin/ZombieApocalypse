@@ -16,5 +16,5 @@ MonoBehaviour:
   _movementSpeed: 1.5
   _runSpeed: 3
   _angularSpeed: 500
-  _gravity: 2
+  _gravity: 1.7
   _jumpForce: 6

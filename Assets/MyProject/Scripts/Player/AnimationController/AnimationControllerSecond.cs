@@ -58,6 +58,15 @@ public class AnimationControllerSecond : MonoBehaviour
         {
             _animator.SetBool(_shootState, false);
         }
+
+        if (Input.GetButton("Jump"))
+        {
+            _animator.SetBool(_gunNoScopeState, false);
+        }
+        else
+        {
+            _animator.SetBool(_gunNoScopeState, true);
+        }
     }
     
     

@@ -53,7 +53,6 @@ namespace MyProject.Scripts.Player.Movement
             {
                 Movement();
                 Rotate();
-                
             }
             
         }
