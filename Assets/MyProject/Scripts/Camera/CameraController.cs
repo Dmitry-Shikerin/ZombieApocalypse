@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("Follow")] 
+    [Header("Follow")]
     [SerializeField] [Range(1f, 5f)] private float _angularSpeed;
     [SerializeField] private Transform _target;
     [SerializeField] private Vector3 _shiftPosition;
 
-    [Header("Zoom")] 
+    [Header("Zoom")]
     [SerializeField] private Player _player;
     [SerializeField] private Transform _camera;
     [SerializeField] private Transform _noScopePosition;
@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _recoveryRate = 0.1f;
     [SerializeField] private float _meaningWaitForSeconds = 1f;
 
-    [Header("Recoil")] 
+    [Header("Recoil")]
     [SerializeField] private float _recoilX = 0f;
     [SerializeField] private float _recoilY = 0f;
     [SerializeField] private float _recoilZ = 0.1f;
@@ -74,7 +74,6 @@ public class CameraController : MonoBehaviour
             
             if (Input.GetButton("Fire1"))
             {
-            
                 Shake();
             }
         }

@@ -14,6 +14,8 @@ public class AnimationController : MonoBehaviour
     private readonly string _gunNoScopeState = "GunNoScopeState";
     private readonly string _gunScopeState = "GunScopeState";
     private readonly string _shootState = "ShootState";
+    private readonly string _rifleDownToAim = "RifleDownToAim";
+    
 
     private readonly string _zoom = "Zoom";
     private readonly string _shooting = "Fire1";
@@ -44,19 +46,33 @@ public class AnimationController : MonoBehaviour
 
     private void SetGunNoScopeState()
     {
-        if(_player.CurrentWeapon != null && Input.GetButton(_zoom) == false && Input.GetButton(_shooting) ==false)
+        // if(_player.CurrentWeapon != null && Input.GetButton(_zoom) == false && Input.GetButton(_shooting) ==false)
+        //     _animator.Play(_gunNoScopeState);
+        
+        if(_player.CurrentWeapon != null && Input.GetButtonUp(_zoom) && Input.GetButton(_shooting) ==false)
             _animator.Play(_gunNoScopeState);
+
     }
 
     private void SetGunScopeState()
     {
-        if(_player.CurrentWeapon != null && Input.GetButton(_zoom) && Input.GetButton(_shooting) == false)
-            _animator.Play(_gunScopeState);
+        // if (_player.CurrentWeapon != null && Input.GetButton(_zoom) && Input.GetButton(_shooting) == false)
+        //     _animator.Play(_gunScopeState);
+
+        if (_player.CurrentWeapon != null && Input.GetButton(_zoom) && Input.GetButton(_shooting) == false)
+        {
+                _animator.Play(_rifleDownToAim);
+              
+            // _animator.Play(_gunScopeState);
+        }
+
     }
 
     private void SetShootState()
     {
-        if(_player.CurrentWeapon != null && Input.GetButton(_shooting) && Input.GetButton(_zoom))
+        if (_player.CurrentWeapon != null && Input.GetButton(_zoom) && Input.GetButton(_shooting))
+        {
             _animator.Play(_shootState);
+        }
     }
 }

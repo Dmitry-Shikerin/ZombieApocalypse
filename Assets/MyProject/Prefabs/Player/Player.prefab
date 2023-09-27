@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 5993055659510317944}
   - component: {fileID: 4554045993024921247}
   - component: {fileID: 3890857305530096741}
-  - component: {fileID: 5273822219954171259}
   - component: {fileID: 7011551667492348012}
   m_Layer: 0
   m_Name: Player
@@ -97,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 160138047835807428}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b8a7488d12adc39498433d60811eab1a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6817049d6a19e384c907a231c8783845, type: 2}
+  m_Controller: {fileID: 9100000, guid: e3ab00949d9be454a9cbca517f8255a5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,20 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _characteristics: {fileID: 11400000, guid: 10d1dc259a1b12f4d9c2b5fc7aac74fe, type: 2}
---- !u!114 &5273822219954171259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160138047835807428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c1d707e64ec77499170c02d56f902c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 4554045993024921247}
-  _animator: {fileID: 3560626987391285942}
 --- !u!114 &7011551667492348012
 MonoBehaviour:
   m_ObjectHideFlags: 0
